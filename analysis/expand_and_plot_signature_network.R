@@ -20,7 +20,12 @@ expand_and_plot_signature_network <- function(
   min_degree = 1,
   string_score_threshold = 400,
   out_dir = "viz/signature_networks", 
-  verbose = TRUE
+  verbose = TRUE,
+  return_data = FALSE,
+  string_db = NULL,
+  layout_method = "kk",
+  show_labels = TRUE,
+  lund_colors = FALSE
 ) {
   # Load STRINGdb
   if (!requireNamespace("STRINGdb", quietly = TRUE)) stop("Please install STRINGdb package.")
@@ -31,19 +36,42 @@ expand_and_plot_signature_network <- function(
   library(ggraph)
   if (!requireNamespace("Cairo", quietly = TRUE)) stop("Please install Cairo package.")
   library(Cairo)
+  if (!requireNamespace("viridis", quietly = TRUE)) stop("Please install viridis package.")
+  library(viridis)
   if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
+  
+  if(verbose){
+    print(paste("Signature:", signature_name))
+  }
 
   # Get signature genes
   signature_genes <- signature_list[[signature_name]]
   if (is.null(signature_genes)) stop("Signature not found in signature_list.")
+  
+  if(verbose){
+    message("1/8 Running StringDB...")
+  }
+
+  # Use provided STRINGdb object or create a new one
+  if (is.null(string_db)) {
+    string_db <- STRINGdb$new(version="11.5", species=9606, score_threshold=string_score_threshold, input_directory="")
+  }
+    # Get signature genes
+    signature_genes <- signature_list[[signature_name]]
+    if (is.null(signature_genes)) stop("Signature not found in signature_list.")
 
   # Query STRING for neighbors
-  string_db <- STRINGdb$new(version="11.5", species=9606, score_threshold=string_score_threshold, input_directory="")
+    if(verbose){
+      message("2/8 Mapping genes...")
+    }
   mapped <- string_db$map(data.frame(gene=signature_genes), "gene", removeUnmappedRows=TRUE)
   if (nrow(mapped) == 0) stop("None of the signature genes could be mapped to STRING IDs.")
   signature_ids <- mapped$STRING_id
   if (length(signature_ids) == 0 || any(is.na(signature_ids))) stop("No valid STRING IDs for signature genes.")
 
+  if(verbose){
+    message("3/8 Finding Neighbours...")
+  }
   neighbors <- tryCatch(string_db$get_neighbors(signature_ids), error=function(e) character(0))
   if (length(neighbors) == 0 || all(is.na(neighbors))) stop("No neighbors found for signature genes in STRING.")
 
@@ -56,6 +84,10 @@ expand_and_plot_signature_network <- function(
   neighbors <- neighbors[!is.na(neighbors) & neighbors != ""]
   if (length(neighbors) == 0) stop("No valid STRING neighbor IDs for alias mapping.")
 
+  
+  if(verbose){
+    message("4/8 Mapping Protein IDs to Gene Symbols...")
+  }
   # Use biomaRt to map STRING protein IDs to gene symbols
   if (!requireNamespace("biomaRt", quietly = TRUE)) install.packages("biomaRt")
   library(biomaRt)
@@ -68,20 +100,29 @@ expand_and_plot_signature_network <- function(
   neighbor_genes <- unique(mapping$external_gene_name)
   neighbor_genes <- setdiff(neighbor_genes, signature_genes)
 
+  
+  if(verbose){
+    message("5/8 Filtering Edges...")
+  }
+  
   # Filter by degree (number of connections to signature)
-  edges <- string_db$get_interactions(signature_ids)
+  edges <- suppressWarnings(string_db$get_interactions(signature_ids))
   if (nrow(edges) == 0) stop("No interactions found for signature genes in STRING.")
   neighbor_counts <- table(c(edges$from, edges$to))
   neighbor_counts <- neighbor_counts[names(neighbor_counts) %in% neighbor_genes]
   top_neighbors <- names(sort(neighbor_counts, decreasing=TRUE))[1:max_added_genes]
   expanded_genes <- unique(c(signature_genes, top_neighbors))
-
+  
   # Get STRING IDs for all mapped neighbors and signature genes
   all_genes <- unique(c(signature_genes, neighbor_genes))
-  all_mapped <- string_db$map(data.frame(gene=all_genes), "gene", removeUnmappedRows=TRUE)
+  all_mapped <- suppressMessages(suppressWarnings(string_db$map(data.frame(gene=all_genes), "gene", removeUnmappedRows=TRUE)))
   all_ids <- all_mapped$STRING_id
   if (length(all_ids) == 0 || any(is.na(all_ids))) stop("No valid STRING IDs for expanded gene set.")
 
+  
+  if(verbose){
+    message("6/8 Expanding Network...")
+  }
   # Get all interactions among expanded set
   network_edges <- string_db$get_interactions(all_ids)
   if (nrow(network_edges) == 0) stop("No network edges found for expanded gene set.")
@@ -117,42 +158,79 @@ expand_and_plot_signature_network <- function(
                         mart = mart)
   peptide_to_symbol <- setNames(node_mapping$external_gene_name, node_mapping$ensembl_peptide_id)
   V(g)$name <- peptide_to_symbol[node_peptides]
+  
+  print(paste("Using layout method:", layout_method))
 
   # Compute fixed layout coordinates for the network
-  layout_coords <- igraph::layout_with_fr(g)
-  # Ensure layout_coords is a matrix with two columns and matches number of nodes
+  layout_coords <- switch(
+    layout_method,
+    fr = igraph::layout_with_fr(g),
+    kk = igraph::layout_with_kk(g),
+    circle = igraph::layout_in_circle(g),
+    lgl = igraph::layout_with_lgl(g),
+    dh = igraph::layout_with_dh(g),
+    igraph::layout_with_fr(g) # default
+  )
   layout_coords <- as.matrix(layout_coords)
   if (ncol(layout_coords) != 2) stop("layout_coords must be a matrix with two columns (x and y coordinates)")
   if (nrow(layout_coords) != length(V(g))) stop("Number of rows in layout_coords must match number of nodes in the graph")
-
-  print(dim(layout_coords))  # Should be (number of nodes, 2)
-  print(layout_coords[1:5, ])  # Should show 5 rows, 2 columns
-  print(length(V(g)))         # Should match nrow(layout_coords)
   
+  if(verbose){
+    message("7/8 Visualization")
+  }
+  # Compute global min/max expression for all expanded genes and all samples
+  all_expr <- expr_data[expanded_genes, , drop=FALSE]
+  global_expr_range <- range(all_expr, na.rm=TRUE)
+  global_mid_expr <- mean(global_expr_range)
+
   # Subset expression by subtype
   subtypes <- unique(subtype_vector)
   for (subtype in subtypes) {
+    if(verbose){
+      print(paste("Plotting ", subtype, " Network..."))
+    }
     samples <- names(subtype_vector)[subtype_vector == subtype]
     expr_sub <- expr_data[expanded_genes, samples, drop=FALSE]
     mean_expr <- rowMeans(expr_sub, na.rm=TRUE)
     V(g)$expr <- mean_expr[V(g)$name]
     # Plot
-    pdf_file <- file.path(out_dir, paste0(signature_name, "_", subtype, "_network.pdf"))
-    CairoPDF(pdf_file, width=20, height=10)
-    # Custom color scale: green (low), black (mid), red (high)
-    library(scales)
-    expr_range <- range(V(g)$expr, na.rm=TRUE)
-    mid_expr <- mean(expr_range)
-    p <- ggraph(g, layout = layout_coords) +
-      geom_edge_link(color="grey80") +
-      geom_node_point(aes(color=expr, size=expr), show.legend=FALSE) +
-      scale_color_gradient2(low="green", mid="black", high="red", midpoint=mid_expr, na.value="grey80") +
-      scale_size_continuous(range=c(4,12)) +
-      geom_node_text(aes(label=name), repel=TRUE, size=3) +
-      labs(title=paste0(signature_name, " network: ", subtype)) +
-      theme_void()
-    print(p)
-    dev.off()
+    if (!return_data) {
+      pdf_file <- file.path(out_dir, paste0(signature_name, "_", subtype, "_network.pdf"))
+      CairoPDF(pdf_file, width=20, height=10)
+      signature_nodes <- V(g)$name %in% signature_genes
+      V(g)$degree <- degree(g)
+      p <- ggraph(g, layout = layout_coords) +
+        geom_edge_link(color="#4f4f4f", alpha=0.5, width = 0.1) +
+        geom_node_point(aes(color=expr, size=degree, shape=signature_nodes), show.legend=TRUE) +
+        (if (lund_colors) {
+          scale_color_gradient2(low="green", mid="black", high="red", midpoint=global_mid_expr, limits=global_expr_range, na.value="grey80")
+        } else {
+          scale_color_viridis(option="C", limits=global_expr_range, na.value="grey80")
+        }) +
+        scale_size_continuous(range=c(4,12)) +
+        scale_shape_manual(values=c(16, 17)) +
+        (if (show_labels) geom_node_text(aes(label=name), repel=FALSE, size=6, color="black", fontface="bold") else NULL) +
+        labs(
+          title = paste0(signature_name, " PPI Network (", subtype, ")"),
+          subtitle = paste0("Nodes: ", vcount(g), " | Filters: Minimum Degree: ", min_degree, ", String Score Threshold: ", string_score_threshold, 
+                            " | Signature genes highlighted | Node size = degree | Color = expression"),
+          color = "Expression",
+          size = "Degree"
+        ) +
+        theme_bw() +
+        theme(
+          axis.title.x = element_blank(), 
+          axis.title.y = element_blank(),
+          axis.text.x = element_blank(),
+          axis.text.y = element_blank(), 
+          axis.ticks = element_blank(),
+          plot.title.position = "plot",
+          plot.title = element_text(hjust = 0.5, face = "bold"),
+          plot.subtitle = element_text(hjust = 0.5)
+        )
+      print(p)
+      dev.off()
+    }
   }
   if(verbose){
     cat("Signature genes:", length(signature_genes), "\n")
@@ -161,6 +239,18 @@ expand_and_plot_signature_network <- function(
     cat("Expanded gene set:", length(expanded_genes), "\n")
     cat("Network nodes:", length(V(g)), "\n")
     print(V(g)$name)
+    message("8/8 Success!")
   }
-  invisible(NULL)
+  if (return_data) {
+    return(list(
+      signature_genes = signature_genes,
+      neighbors = neighbors,
+      neighbor_genes = neighbor_genes,
+      expanded_genes = expanded_genes,
+      g = g,
+      layout_coords = layout_coords
+    ))
+  } else {
+    invisible(NULL)
+  }
 }
