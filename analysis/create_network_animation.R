@@ -3,7 +3,7 @@ library(magick)
 library(pdftools)
 
 #list all PDF files in the target directory (change path as needed)
-pdf_files <- list.files(path = "viz/networks/test/", pattern = "*.pdf", full.names = TRUE)
+pdf_files <- list.files(path = "viz/tat1/UroDiff/big/", pattern = "*.pdf", full.names = TRUE)
 
 #convert PDFs to PNGs
 png_files <- character(length(pdf_files))
@@ -16,7 +16,7 @@ for (i in seq_along(pdf_files)) {
 
 #read PNGs and create animation
 img_list <- image_read(png_files)
-animation <- image_animate(image_join(img_list), fps = 1) # 1 frame per second
+animation <- image_animate(image_join(img_list), fps = 0.5) # 1 frame per second
 
 #save animated GIF
-image_write(animation, path = "viz/networks/network_animation.gif")
+image_write(animation, path = "viz/tat1/UroDiff/big_relaxed/animation.gif")
