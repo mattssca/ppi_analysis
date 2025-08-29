@@ -26,7 +26,6 @@
 #' @param plot_height Height of the output plot in inches (default: 10).
 #' @param color_scale_global Logical; if TRUE, use a global color scale for all subtypes; if FALSE, scale per subtype (default: TRUE).
 #' @param genes_blacklist A vector of gene symbols to exclude from the top neighbors (default: NULL).
-#' @param add_lund_genes Logical; if TRUE, highlight lund genes in the network plot with a border (default: FALSE).
 #'
 #' @return NULL (plots saved to PDF) or a list with network and node metrics if return_data = TRUE.
 #'
@@ -57,9 +56,7 @@ expand_and_plot_signature_network <- function(expr_data,
                                               plot_width = 15,
                                               plot_height = 10,
                                               color_scale_global = TRUE,
-                                              genes_blacklist = NULL,
-                                              add_lund_genes = FALSE,
-                                              lund_genes = NULL) {
+                                              genes_blacklist = NULL) {
 
   #suppress unused variable warnings
   all_ids <- NULL
