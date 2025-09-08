@@ -24,6 +24,17 @@ plot_network_by_cluster <- function(nodes_object,
   library(tidygraph)
   library(ggplot2)
   
+  
+  if(length(unique(clusters)) > length(unique(cluster_colors))) {
+    stop(
+      paste0(
+        "Not enough colors provided for annotating clusters: ",
+        length(unique(clusters)), " clusters detected, but only ",
+        length(unique(cluster_colors)), " colors provided."
+      )
+    )
+  }
+  
   #convert igraph object to tidygraph
   tg <- as_tbl_graph(nodes_object$g)
   this_layout = nodes_object$layout_coords

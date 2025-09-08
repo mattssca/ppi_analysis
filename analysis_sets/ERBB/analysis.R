@@ -17,11 +17,15 @@ source("functions/plot_node_heatmap.R")
 source("functions/get_hm_order.R")
 source("functions/plot_signature_network_heatmap.R")
 
+#get lundtax objects
+lund_colors = LundTax2023Classifier::lund_colors$lund_colors
+signatures = LundTax2023Classifier::signatures
+
 #create nodes object
 erbb_nodes = expand_and_plot_signature_network(expr_data = uroscanseq_data$expr_df,
                                                return_data = TRUE,
                                                expr_summary = "mean",
-                                               max_added_genes = 20, 
+                                               max_added_genes = 30, 
                                                layout_method = "kk",
                                                min_degree = 1, 
                                                string_score_threshold = 700,  
@@ -41,7 +45,7 @@ expand_and_plot_signature_network(expr_data = uroscanseq_data$expr_df,
                                   node_degree = TRUE,
                                   theme = "light",
                                   show_labels = TRUE,
-                                  max_added_genes = 20, 
+                                  max_added_genes = 30, 
                                   layout_method = "kk",
                                   min_degree = 1, 
                                   string_score_threshold = 700,  
@@ -61,6 +65,7 @@ erbb_cluster = plot_node_heatmap(nodes_object = erbb_nodes,
 #plot network by cluster
 plot_network_by_cluster(nodes_object = erbb_nodes,
                         node_size = 20,
+                        cluster_colors = c("1" = "#77BEF0", "2" = "#FFCB61", "3" = "#EA5B6F"),
                         pdf_width = 10, 
                         pdf_height = 10, 
                         clusters = erbb_cluster, 
@@ -81,9 +86,25 @@ erbb_cluster_hubs = plot_node_heatmap(nodes_object = erbb_nodes,
 plot_signature_network_heatmap(nodes_object = erbb_nodes, 
                                expr_data = uroscanseq_data$expr_df, 
                                subtype_vector = uroscanseq_data$subtype_7_vector,
-                               lund_colors = lund_colors$lund_colors, 
+                               lund_colors = lund_colors,
+                               only_hubs = FALSE, 
+                               global_signature_cols = FALSE,
+                               top_hubs = 10,
                                outpath = "analysis_sets/ERBB/figures/ERBB_signature_heatmap.pdf", 
                                plot_width = 20,
                                plot_height = 10,
+                               cluster_object = erbb_cluster,
                                plot_title = "ERBB Signature (Extended) Heatmap")
+
+plot_signature_network_heatmap(nodes_object = erbb_nodes, 
+                               expr_data = uroscanseq_data$expr_df, 
+                               subtype_vector = uroscanseq_data$subtype_7_vector,
+                               lund_colors = lund_colors,
+                               only_hubs = TRUE, 
+                               top_hubs = 10,
+                               outpath = "analysis_sets/ERBB/figures/ERBB_signature_heatmap_HUBS_only.pdf", 
+                               plot_width = 20,
+                               plot_height = 10,
+                               cluster_object = erbb_cluster_hubs,
+                               plot_title = "ERBB Signature (Top 10 HUBS) Heatmap")
  

@@ -26,13 +26,9 @@ plot_node_heatmap <- function(nodes_object,
                               cell_height = NULL,
                               pdf_width = 20,
                               pdf_height = 10,
-<<<<<<< HEAD
                               top_hubs = 5,
                               only_hubs = FALSE){
-  
-=======
-                              top_hubs = 5){
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
+
   library(ComplexHeatmap)
   library(Cairo)
   library(circlize)
@@ -42,11 +38,7 @@ plot_node_heatmap <- function(nodes_object,
   lund_genes <- LundTax2023Classifier::gene_list$hgnc_symbol
   gene_names <- nodes_object$expanded_genes
   
-<<<<<<< HEAD
   #order subtypes as UroA, UroB, UroC, GU, BaSq
-=======
-  # Order subtypes as UroA, UroB, UroC, GU, BaSq
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
   desired_order <- c("mean_expr_UroA", "mean_expr_UroB", "mean_expr_UroC", "mean_expr_GU", "mean_expr_BaSq")
   expr_cols <- grep("^mean_expr_", colnames(node_metrics), value = TRUE)
   expr_cols <- intersect(desired_order, expr_cols)
@@ -54,7 +46,6 @@ plot_node_heatmap <- function(nodes_object,
   rownames(expr_matrix) <- node_metrics$name
   colnames(expr_matrix) <- gsub("^mean_expr_", "", colnames(expr_matrix))
   
-<<<<<<< HEAD
   #subset to only top hubs if requested
   if(only_hubs){
     top_hub_names <- node_metrics$name[order(node_metrics$degree, decreasing = TRUE)][1:top_hubs]
@@ -91,7 +82,7 @@ plot_node_heatmap <- function(nodes_object,
   top_hub_names <- node_metrics$name[order(node_metrics$degree, decreasing = TRUE)][1:top_hubs]
   hub_status <- ifelse(gene_names %in% top_hub_names, "Yes", "No")
   hub_colors <- c("Yes" = "#E62727", "No" = "#1E93AB")
-=======
+
   # Transpose to flip heatmap (genes as columns)
   expr_matrix_t <- t(scale(expr_matrix))
   
@@ -113,13 +104,12 @@ plot_node_heatmap <- function(nodes_object,
     c("#BCA88D", "#3E3F29")
   )
   
-  
   # Identify top N hubs by degree
   top_hub_names <- node_metrics$name[order(node_metrics$degree, decreasing = TRUE)][1:top_hubs]
   hub_status <- ifelse(gene_names %in% top_hub_names, "Top Hub", "Other")
   hub_colors <- c("Top Hub" = "#E62727", "Other" = "#1E93AB")
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
-  
+
+  #heatmap annotations
   col_ha <- HeatmapAnnotation(
     annotation_name_side = "left", 
     `Gene Group` = gene_group,
@@ -130,30 +120,19 @@ plot_node_heatmap <- function(nodes_object,
       Degree = degree_colors,
       Hub = hub_colors
     ),
-<<<<<<< HEAD
     show_annotation_name = TRUE,
-    height = unit(100, "mm")
-=======
-    show_annotation_name = TRUE
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
-  )
+    height = unit(100, "mm"))
+
   
   heatmap_colors <- colorRampPalette(c("#4DF76F", "black", "#F74D4D"))(100)
   
-<<<<<<< HEAD
-=======
   #draw heatmap
   # Calculate cell width and height so that total width = 350mm and height = 50mm by default
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
   n_cols <- ncol(expr_matrix_t)
   n_rows <- nrow(expr_matrix_t)
   if (is.null(cell_width)) cell_width <- 350 / n_cols
   if (is.null(cell_height)) cell_height <- 50 / n_rows
-  
-<<<<<<< HEAD
-  #draw heatmap
-=======
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
+
   ht = Heatmap(
     expr_matrix_t, 
     name = "Expression",
@@ -166,13 +145,9 @@ plot_node_heatmap <- function(nodes_object,
     row_names_gp = gpar(fontsize = 14), 
     row_names_side = "left", 
     column_names_gp = gpar(fontsize = 12),      
-<<<<<<< HEAD
     column_names_side = "bottom",
     clustering_distance_columns = "spearman",
     clustering_method_columns = "ward.D2",
-=======
-    column_names_side = "bottom",              
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
     rect_gp = gpar(col = NA),                   
     top_annotation = col_ha,
     show_heatmap_legend = FALSE, 
@@ -182,13 +157,12 @@ plot_node_heatmap <- function(nodes_object,
   )
   
   CairoPDF(output_path, width = pdf_width, height = pdf_height)
-<<<<<<< HEAD
   ht_result <- draw(ht)
   dev.off()
   
   #extract cluster assignments for columns (genes)
   column_clusters <- ComplexHeatmap::column_order(ht_result)
-
+  
   #get cluster assignment for each gene
   gene_cluster_assignment <- rep(NA, ncol(expr_matrix_t))
   for (i in seq_along(column_clusters)) {
@@ -198,8 +172,6 @@ plot_node_heatmap <- function(nodes_object,
   
   return(gene_cluster_assignment)
 
-=======
   draw(ht)
   dev.off()
->>>>>>> 16763cecf25dce73c3108d6392870c44d289c5e4
 }
