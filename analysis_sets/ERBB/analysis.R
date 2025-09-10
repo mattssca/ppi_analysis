@@ -9,6 +9,9 @@ library(STRINGdb)
 library(ggraph)
 library(Cairo)
 library(biomaRt)
+library(ComplexHeatmap)
+library(circlize)
+library(patchwork)
 
 #source functions
 source("functions/expand_and_plot_signature_network.R")
@@ -16,6 +19,7 @@ source("functions/plot_network_by_cluster.R")
 source("functions/plot_node_heatmap.R") 
 source("functions/get_hm_order.R")
 source("functions/plot_signature_network_heatmap.R")
+source("functions/run_anova_ppi.R")
 
 #get lundtax objects
 lund_colors = LundTax2023Classifier::lund_colors$lund_colors
@@ -33,7 +37,7 @@ erbb_nodes = expand_and_plot_signature_network(expr_data = uroscanseq_data$expr_
                                                signature_list = uroscanseq_data$signature_genes, 
                                                signature_name = "ERBB")
 
-#plot ppi netowrk
+#plot ppi network
 expand_and_plot_signature_network(expr_data = uroscanseq_data$expr_df,
                                   node_size = 20,
                                   plot_width = 10,
@@ -107,4 +111,34 @@ plot_signature_network_heatmap(nodes_object = erbb_nodes,
                                plot_height = 10,
                                cluster_object = erbb_cluster_hubs,
                                plot_title = "ERBB Signature (Top 10 HUBS) Heatmap")
+
+#run ANOVA
+erbb_results = run_anova_ppi(expr_data = uroscanseq_data$expr_df, 
+                             extended_genes = erbb_nodes$expanded_genes, 
+                             subtype_vector = uroscanseq_data$subtype_7_vector,
+                             node_metrics = erbb_nodes$node_metrics, 
+                             subtype_class = "7_class", 
+                             sig_p = 0.05,
+                             min_diff = 1)
+
+CairoPDF("analysis_sets/ERBB/figures/ERBB_anova_volcano.pdf", width = 15, height = 10)
+print(erbb_results$volcano_plot)
+dev.off()
+
+CairoPDF("analysis_sets/ERBB/figures/ERBB_facet_expression_volcano.pdf", width = 20, height = 20)
+print(erbb_results$facet_plot)
+dev.off()
+
+#redraw heatmap with blacklsited genes
+plot_blacklist_network_heatmap(nodes_object = erbb_nodes, 
+                               expr_data = uroscanseq_data$expr_df, 
+                               subtype_vector = uroscanseq_data$subtype_7_vector,
+                               lund_colors = lund_colors,
+                               blacklist_genes = erbb_results$blacklist_genes,
+                               cut_tree = 3,
+                               subtype_class = "7_class",
+                               outpath = "analysis_sets/ERBB/figures/ERBB_blacklist_signature_heatmap.pdf", 
+                               plot_width = 20,
+                               plot_height = 10,
+                               plot_title = "ERBB Signature Blacklisted Genes Removed")
  
