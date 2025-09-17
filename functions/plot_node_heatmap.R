@@ -38,6 +38,18 @@ plot_node_heatmap <- function(nodes_object,
   lund_genes <- LundTax2023Classifier::gene_list$hgnc_symbol
   gene_names <- nodes_object$expanded_genes
   
+  #identify rows with any NA in node_metrics
+  na_rows <- apply(node_metrics, 1, function(x) any(is.na(x)))
+  removed_genes <- rownames(node_metrics)[na_rows]
+  
+  #print removed gene names
+  if (length(removed_genes) > 0) {
+    message("Removed genes with NA in node_metrics: ", paste(removed_genes, collapse = ", "))
+  }
+  
+  #remove those rows
+  node_metrics <- node_metrics[!na_rows, ]
+  
   #order subtypes as UroA, UroB, UroC, GU, BaSq
   desired_order <- c("mean_expr_UroA", "mean_expr_UroB", "mean_expr_UroC", "mean_expr_GU", "mean_expr_BaSq")
   expr_cols <- grep("^mean_expr_", colnames(node_metrics), value = TRUE)

@@ -42,6 +42,20 @@ run_anova_ppi = function(expr_data,
   library(ggplot2)
   library(patchwork)
   
+  # Identify rows with any NA in node_metrics
+  na_rows <- apply(node_metrics, 1, function(x) any(is.na(x)))
+  removed_genes <- rownames(node_metrics)[na_rows]
+  
+  # Print removed gene names
+  if (length(removed_genes) > 0) {
+    message("Removed genes with NA in node_metrics: ", paste(removed_genes, collapse = ", "))
+    # Remove from expanded_genes as well
+    extended_genes <- setdiff(extended_genes, removed_genes)
+  }
+  
+  # Remove those rows from node_metrics
+  node_metrics <- node_metrics[!na_rows, ]
+  
   #subset expression to genes of interest
   expr_sub <- expr_data[extended_genes, , drop = FALSE]
   
@@ -156,7 +170,7 @@ run_anova_ppi = function(expr_data,
     theme_minimal()
   
   #blacklsit genes that are non-significant
-  blacklist <- setdiff(extended_genes, results$sig_genes$gene)
+  blacklist <- setdiff(extended_genes, sig_genes$gene)
   
   results = list(sig_genes = sig_genes,
                  blacklist_genes = blacklist,

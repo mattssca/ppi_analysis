@@ -44,6 +44,20 @@ plot_signature_network_heatmap <- function(nodes_object,
   #genes to plot
   node_metrics = nodes_object$node_metrics
   
+  # Identify rows with any NA in node_metrics
+  na_rows <- apply(node_metrics, 1, function(x) any(is.na(x)))
+  removed_genes <- rownames(node_metrics)[na_rows]
+  
+  # Print removed gene names
+  if (length(removed_genes) > 0) {
+    message("Removed genes with NA in node_metrics: ", paste(removed_genes, collapse = ", "))
+    # Remove from expanded_genes as well
+    nodes_object$expanded_genes <- setdiff(nodes_object$expanded_genes, removed_genes)
+  }
+  
+  # Remove those rows from node_metrics
+  node_metrics <- node_metrics[!na_rows, ]
+  
   #deal with only hubs parameter
   if(only_hubs){
     top_hubs = head(node_metrics[order(-node_metrics$degree), "name"], top_hubs)
@@ -209,6 +223,7 @@ plot_signature_network_heatmap <- function(nodes_object,
     cluster_columns = FALSE,
     column_order = sample_order,
     height = unit(100, "mm"),
+    #width = unit(800, "mm"),
     row_names_side = "left",
     row_title = NULL,
     show_column_names = FALSE,

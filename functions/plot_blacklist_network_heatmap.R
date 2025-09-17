@@ -13,6 +13,20 @@ plot_blacklist_network_heatmap <- function(nodes_object,
   #genes to plot
   node_metrics = nodes_object$node_metrics
   
+  # Identify rows with any NA in node_metrics
+  na_rows <- apply(node_metrics, 1, function(x) any(is.na(x)))
+  removed_genes <- rownames(node_metrics)[na_rows]
+  
+  # Print removed gene names
+  if (length(removed_genes) > 0) {
+    message("Removed genes with NA in node_metrics: ", paste(removed_genes, collapse = ", "))
+    # Remove from expanded_genes as well
+    nodes_object$expanded_genes <- setdiff(nodes_object$expanded_genes, removed_genes)
+  }
+  
+  # Remove those rows from node_metrics
+  node_metrics <- node_metrics[!na_rows, ]
+  
   #genes to plot
   genes_to_plot <- setdiff(nodes_object$expanded_genes, blacklist_genes)
 
@@ -142,7 +156,7 @@ plot_blacklist_network_heatmap <- function(nodes_object,
     cluster_column_slices = FALSE,
     cluster_columns = FALSE,
     column_order = sample_order,
-    height = unit(100, "mm"),
+    height = unit(500, "mm"),
     row_names_side = "left",
     row_title = NULL,
     show_column_names = FALSE,
