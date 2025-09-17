@@ -204,7 +204,7 @@ expand_and_plot_signature_network <- function(expr_data,
   
   #compute fixed layout coordinates for the network
   layout_coords <- switch(layout_method,
-                          fr = igraph::layout_with_fr(g),
+                          fr = igraph::layout_with_fr(g, niter = 1000),
                           kk = igraph::layout_with_kk(g),
                           circle = igraph::layout_in_circle(g),
                           lgl = igraph::layout_with_lgl(g),
@@ -290,7 +290,7 @@ expand_and_plot_signature_network <- function(expr_data,
       
       #plot
       p <- ggraph(g, layout = layout_coords) +
-        geom_edge_link(color = "#969696", alpha = 1, width = 0.3) +
+        geom_edge_link(color = "#969696", alpha = 1, width = 0.1) +
         geom_node_point(aes(color = expr, size = node_size_vec, shape = signature_nodes), show.legend = FALSE) +
         (
           if (node_color == "lund") {
