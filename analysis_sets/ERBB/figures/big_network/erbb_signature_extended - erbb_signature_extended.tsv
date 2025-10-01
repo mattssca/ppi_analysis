@@ -1,0 +1,119 @@
+gene_symbol	ensembl_gene_id	description	module	degree	hub_score	max_diff	padj	protein_atlas	gene_cards	receptor	uro_receptor	keep
+CCL2	ENSG00000108691	C-C motif chemokine ligand 2	1	180	0.40	1.48	4.4E-48	uro_cells	NA	NA	NA	yes
+CD247	ENSG00000198821	CD247 molecule	1	92	0.20	1.08	6.9E-27	stromal_cells	NA	NA	NA	no
+CD274	ENSG00000120217	CD274 molecule	1	136	0.32	1.55	1.1E-35	uro_cells	NA	NA	NA	yes
+CD34	ENSG00000174059	CD34 molecule	1	206	0.45	1.09	2.0E-08	stromal_cells	NA	NA	NA	no
+CD8A	ENSG00000153563	CD8 subunit alpha	1	216	0.48	1.09	4.1E-17	stromal_cells	NA	NA	NA	no
+CSF1	ENSG00000184371	colony stimulating factor 1	1	152	0.34	1.26	1.2E-31	missing	NA	NA	NA	review
+CSF2	ENSG00000164400	colony stimulating factor 2	1	212	0.48	1.17	3.9E-18	stromal_cells	NA	NA	NA	review
+CSF3	ENSG00000108342	colony stimulating factor 3	1	144	0.32	1.22	1.9E-25	stromal_cells	NA	NA	NA	review
+CXCL8	ENSG00000169429	C-X-C motif chemokine ligand 8	1	248	0.53	1.56	2.2E-40	missing	NA	NA	NA	no
+CXCR4	ENSG00000121966	C-X-C motif chemokine receptor 4	1	234	0.51	1.13	1.8E-33	missing	NA	NA	NA	review
+FAS	ENSG00000026103	Fas cell surface death receptor	1	112	0.25	1.10	4.7E-11	ambiguous	NA	NA	NA	review
+GATA3	ENSG00000107485	GATA binding protein 3	1	116	0.25	1.51	4.2E-42	uro_cells	NA	NA	NA	yes
+ICAM1	ENSG00000090339	intercellular adhesion molecule 1	1	204	0.45	1.54	2.5E-46	stromal_cells	NA	NA	NA	no
+IFNG	ENSG00000111537	interferon gamma	1	188	0.41	1.27	4.9E-21	ligand	NA	NA	NA	review
+IL10	ENSG00000136634	interleukin 10	1	226	0.48	1.28	3.9E-31	ligand	NA	NA	NA	review
+IL15	ENSG00000164136	interleukin 15	1	124	0.26	1.32	5.6E-22	stromal_cells	NA	NA	NA	review
+IL1B	ENSG00000125538	interleukin 1 beta	1	278	0.59	1.19	2.6E-18	missing	NA	NA	NA	review
+IL6	ENSG00000136244	interleukin 6	1	356	0.72	1.36	1.4E-33	stromal_cells	NA	NA	NA	review
+IL7	ENSG00000104432	interleukin 7	1	140	0.30	1.04	4.9E-11	stromal_cells	NA	NA	NA	review
+JAK2	ENSG00000096968	Janus kinase 2	1	280	0.60	1.10	1.7E-11	uro_cells	NA	NA	NA	yes
+PRLR	ENSG00000113494	prolactin receptor	1	76	0.16	1.27	3.5E-29	ambiguous	NA	NA	NA	review
+PTGS2	ENSG00000073756	prostaglandin-endoperoxide synthase 2	1	182	0.44	1.03	1.1E-08	uro_cells	NA	NA	NA	yes
+PTPRC	ENSG00000262418	protein tyrosine phosphatase receptor type C	1	246	0.52	1.03	4.6E-23	stromal_cells	NA	NA	NA	no
+SOCS1	ENSG00000185338	suppressor of cytokine signaling 1	1	136	0.30	1.18	2.3E-26	uro_cells	NA	NA	NA	yes
+SOCS3	ENSG00000184557	suppressor of cytokine signaling 3	1	168	0.38	1.54	7.7E-50	uro_cells	NA	NA	NA	yes
+STAT1	ENSG00000115415	signal transducer and activator of transcription 1	1	220	0.48	1.32	3.3E-17	uro_cells	NA	NA	NA	yes
+STAT3	ENSG00000168610	signal transducer and activator of transcription 3	1	416	0.82	1.27	7.8E-17	uro_cells	NA	NA	NA	yes
+STAT6	ENSG00000166888	signal transducer and activator of transcription 6	1	112	0.25	1.34	7.5E-47	uro_cells	NA	NA	NA	yes
+TLR2	ENSG00000137462	toll like receptor 2	1	146	0.32	1.43	1.5E-23	stromal_cells	NA	NA	NA	review
+TLR4	ENSG00000136869	toll like receptor 4	1	218	0.46	1.37	1.5E-37	uro_cells	NA	NA	NA	yes
+TNF	ENSG00000228978	tumor necrosis factor	1	336	0.68	1.13	3.6E-24	stromal_cells	NA	NA	NA	review
+TNFRSF1A	ENSG00000067182	TNF receptor superfamily member 1A	1	138	0.30	1.05	2.9E-12	uro_cells	NA	NA	NA	yes
+TRAF6	ENSG00000175104	TNF receptor associated factor 6	1	162	0.35	1.20	1.8E-22	uro_cells	NA	NA	NA	yes
+ZAP70	ENSG00000291603	zeta chain of T cell receptor associated protein kinase 70	1	120	0.25	1.11	6.1E-23	stromal_cells	NA	NA	NA	no
+ANGPT1	ENSG00000154188	angiopoietin 1	2	134	0.31	1.04	4.7E-18	uro_cells	NA	NA	NA	yes
+AREG	ENSG00000109321	amphiregulin	2	124	0.28	1.42	4.1E-22	ambiguous	NA	NA	NA	review
+EPHA2	ENSG00000142627	EPH receptor A2	2	134	0.29	1.19	2.0E-14	ambiguous	NA	NA	NA	review
+EREG	ENSG00000124882	epiregulin	2	108	0.24	1.58	3.1E-34	uro_cells	NA	NA	NA	yes
+FGFR1	ENSG00000077782	fibroblast growth factor receptor 1	2	194	0.40	1.27	4.0E-15	uro_cells	NA	NA	NA	yes
+FGFR3	ENSG00000068078	fibroblast growth factor receptor 3	2	172	0.36	1.28	1.9E-37	uro_cells	NA	NA	NA	yes
+FGFR4	ENSG00000160867	fibroblast growth factor receptor 4	2	128	0.27	1.03	2.3E-06	uro_cells	NA	NA	NA	yes
+GAB2	ENSG00000033327	GRB2 associated binding protein 2	2	134	0.29	1.03	4.3E-17	uro_cells	NA	NA	NA	yes
+HBEGF	ENSG00000113070	heparin binding EGF like growth factor	2	134	0.32	1.50	1.9E-29	missing	NA	NA	NA	review
+IRS1	ENSG00000169047	insulin receptor substrate 1	2	246	0.53	1.85	6.9E-70	uro_cells	NA	NA	NA	yes
+NGFR	ENSG00000064300	nerve growth factor receptor	2	152	0.32	1.16	3.3E-25	uro_cells	NA	NA	NA	yes
+NRAS	ENSG00000213281	NRAS proto-oncogene, GTPase	2	246	0.49	1.19	1.0E-11	uro_cells	NA	NA	NA	yes
+PDGFRB	ENSG00000113721	platelet derived growth factor receptor beta	2	238	0.50	1.20	2.5E-34	stromal_cells	NA	NA	NA	no
+PIK3CD	ENSG00000171608	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit delta	2	168	0.33	1.09	2.6E-26	uro_cells	NA	NA	NA	yes
+PIK3CG	ENSG00000105851	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit gamma	2	108	0.24	1.00	7.5E-23	uro_cells	NA	NA	NA	yes
+PIK3R2	ENSG00000105647	phosphoinositide-3-kinase regulatory subunit 2	2	204	0.40	1.19	5.9E-27	uro_cells	NA	NA	NA	yes
+PRKCZ	ENSG00000067606	protein kinase C zeta	2	134	0.29	1.18	1.6E-35	uro_cells	NA	NA	NA	yes
+RPS27A	ENSG00000143947	ribosomal protein S27a	2	196	0.38	1.02	4.2E-14	uro_cells	NA	NA	NA	yes
+VEGFC	ENSG00000150630	vascular endothelial growth factor C	2	114	0.27	1.29	3.6E-23	ambiguous	NA	NA	NA	review
+ARRB1	ENSG00000137486	arrestin beta 1	3	102	0.21	1.24	2.0E-26	ligand	NA	NA	NA	review
+ARRB2	ENSG00000141480	arrestin beta 2	3	106	0.20	1.21	1.8E-42	ligand	NA	NA	NA	review
+CTNND1	ENSG00000198561	catenin delta 1	3	88	0.19	1.07	1.8E-26	uro_cells	NA	NA	NA	yes
+CTTN	ENSG00000288401	cortactin	3	96	0.20	1.06	3.6E-24	uro_cells	NA	NA	NA	yes
+DNM2	ENSG00000079805	dynamin 2	3	70	0.14	1.73	1.7E-54	uro_cells	NA	NA	NA	yes
+ITGB2	ENSG00000160255	integrin subunit beta 2	3	94	0.19	1.26	1.3E-35	stromal_cells	NA	NA	NA	no
+LYN	ENSG00000254087	LYN proto-oncogene, Src family tyrosine kinase	3	204	0.43	1.36	9.3E-31	uro_cells	NA	NA	NA	yes
+MAPT	ENSG00000277956	microtubule associated protein tau	3	82	0.18	1.01	8.5E-08	uro_cells	NA	NA	NA	yes
+NCK1	ENSG00000158092	NCK adaptor protein 1	3	112	0.22	1.83	1.0E-41	uro_cells	NA	NA	NA	yes
+PLEK	ENSG00000115956	pleckstrin	3	86	0.20	1.36	8.4E-44	stromal_cells	NA	NA	NA	no
+PPP2CA	ENSG00000113575	protein phosphatase 2 catalytic subunit alpha	3	122	0.26	1.11	1.8E-10	uro_cells	NA	NA	NA	yes
+PPP2R1A	ENSG00000105568	protein phosphatase 2 scaffold subunit Aalpha	3	120	0.25	1.12	1.2E-09	missing	bladder_related	NA	NA	yes
+PTK2	ENSG00000169398	protein tyrosine kinase 2	3	212	0.47	1.11	2.2E-21	uro_cells	NA	NA	NA	yes
+PTK2B	ENSG00000120899	protein tyrosine kinase 2 beta	3	116	0.25	1.11	4.4E-20	uro_cells	NA	NA	NA	yes
+PXN	ENSG00000089159	paxillin	3	186	0.40	1.29	1.5E-30	uro_cells	NA	NA	NA	yes
+RAC2	ENSG00000128340	Rac family small GTPase 2	3	116	0.23	1.11	3.2E-18	uro_cells	NA	NA	NA	yes
+SNCA	ENSG00000145335	synuclein alpha	3	90	0.20	1.09	2.7E-16	missing	bladder_related	NA	NA	yes
+SRC	ENSG00000291971	SRC proto-oncogene, non-receptor tyrosine kinase	3	470	0.88	1.24	7.5E-18	uro_cells	NA	NA	NA	yes
+AKT3	ENSG00000275199	AKT serine/threonine kinase 3	4	116	0.26	1.00	5.6E-18	uro_cells	NA	NA	NA	yes
+ANXA5	ENSG00000164111	annexin A5	4	220	0.49	1.38	5.3E-24	ambiguous	bladder_related	NA	NA	yes
+BRCA1	ENSG00000012048	BRCA1 DNA repair associated	4	156	0.34	1.28	1.9E-31	uro_cells	NA	NA	NA	yes
+CASP8	ENSG00000064012	caspase 8	4	150	0.35	1.09	1.0E-19	uro_cells	NA	NA	NA	yes
+CASP9	ENSG00000132906	caspase 9	4	124	0.30	1.23	2.4E-14	uro_cells	NA	NA	NA	yes
+CCNA2	ENSG00000145386	cyclin A2	4	108	0.24	1.24	1.2E-31	uro_cells	NA	NA	NA	yes
+CCNB1	ENSG00000134057	cyclin B1	4	112	0.24	1.16	9.4E-30	uro_cells	NA	NA	NA	yes
+CCND1	ENSG00000110092	cyclin D1	4	306	0.62	1.44	3.5E-39	uro_cells	NA	NA	NA	yes
+CDKN1A	ENSG00000124762	cyclin dependent kinase inhibitor 1A	4	162	0.37	1.06	2.3E-16	uro_cells	NA	NA	NA	yes
+CDKN2A	ENSG00000147889	cyclin dependent kinase inhibitor 2A	4	222	0.50	1.24	8.2E-23	uro_cells	NA	NA	NA	yes
+CREB1	ENSG00000118260	cAMP responsive element binding protein 1	4	176	0.41	1.07	1.4E-16	uro_cells	NA	NA	NA	yes
+CTNNB1	ENSG00000168036	catenin beta 1	4	446	0.83	1.03	8.6E-22	uro_cells	NA	NA	NA	yes
+EZH2	ENSG00000106462	enhancer of zeste 2 polycomb repressive complex 2 subunit	4	124	0.27	1.45	3.4E-50	uro_cells	NA	NA	NA	yes
+FOXO1	ENSG00000150907	forkhead box O1	4	152	0.33	1.14	2.5E-26	uro_cells	NA	NA	NA	yes
+HIF1A	ENSG00000100644	hypoxia inducible factor 1 subunit alpha	4	296	0.61	1.58	5.2E-25	uro_cells	NA	NA	NA	yes
+HSPA4	ENSG00000170606	heat shock protein family A (Hsp70) member 4	4	166	0.35	1.22	2.3E-26	uro_cells	NA	NA	NA	yes
+HSPA5	ENSG00000044574	heat shock protein family A (Hsp70) member 5	4	98	0.24	1.38	1.1E-11	uro_cells	NA	NA	NA	yes
+MAPK3	ENSG00000102882	mitogen-activated protein kinase 3	4	416	0.80	1.06	1.5E-16	uro_cells	NA	NA	NA	yes
+MCL1	ENSG00000143384	MCL1 apoptosis regulator, BCL2 family member	4	124	0.30	1.46	2.4E-29	uro_cells	NA	NA	NA	yes
+NPM1	ENSG00000181163	nucleophosmin 1	4	100	0.22	1.23	1.1E-22	uro_cells	NA	NA	NA	yes
+NR3C1	ENSG00000113580	nuclear receptor subfamily 3 group C member 1	4	122	0.29	1.37	2.6E-16	uro_cells	NA	NA	NA	yes
+PGR	ENSG00000082175	progesterone receptor	4	134	0.32	1.26	1.2E-09	uro_cells	NA	NA	NA	yes
+PPARG	ENSG00000132170	peroxisome proliferator activated receptor gamma	4	202	0.44	1.71	2.2E-76	uro_cells	NA	NA	NA	yes
+RB1	ENSG00000139687	RB transcriptional corepressor 1	4	106	0.24	1.20	2.5E-24	uro_cells	NA	NA	NA	yes
+SMAD3	ENSG00000166949	SMAD family member 3	4	190	0.41	1.47	3.9E-53	uro_cells	NA	NA	NA	yes
+TP53	ENSG00000141510	tumor protein p53	4	430	0.83	1.38	2.6E-25	uro_cells	NA	NA	NA	yes
+ANXA2	ENSG00000182718	annexin A2	5	76	0.19	1.93	5.0E-34	uro_cells	NA	NA	NA	yes
+BMP2	ENSG00000125845	bone morphogenetic protein 2	5	94	0.21	1.06	4.1E-25	ambiguous	bladder_related	NA	NA	review
+BMP4	ENSG00000125378	bone morphogenetic protein 4	5	120	0.25	1.37	1.9E-14	uro_cells	NA	NA	NA	review
+CAV1	ENSG00000105974	caveolin 1	5	210	0.45	1.52	1.2E-33	stromal_cells	NA	NA	NA	no
+CD44	ENSG00000026508	CD44 molecule (IN blood group)	5	288	0.60	2.12	5.7E-48	uro_cells	NA	NA	NA	yes
+EPCAM	ENSG00000119888	epithelial cell adhesion molecule	5	88	0.22	1.14	5.0E-28	uro_cells	NA	NA	NA	yes
+FN1	ENSG00000115414	fibronectin 1	5	348	0.69	1.23	1.6E-24	stromal_cells	NA	NA	NA	no
+MKI67	ENSG00000148773	marker of proliferation Ki-67	5	106	0.26	1.11	2.1E-24	uro_cells	NA	NA	NA	yes
+MMP3	ENSG00000149968	matrix metallopeptidase 3	5	108	0.26	1.30	4.4E-32	uro_cells	NA	NA	NA	yes
+MMP9	ENSG00000100985	matrix metallopeptidase 9	5	246	0.55	1.13	2.1E-32	ambiguous	NA	NA	NA	review
+NES	ENSG00000132688	nestin	5	104	0.24	1.20	1.5E-13	ambiguous	bladder_related	NA	NA	review
+POU5F1	ENSG00000204531	POU class 5 homeobox 1	5	132	0.28	1.40	8.5E-20	uro_cells	NA	NA	NA	yes
+SERPINE1	ENSG00000106366	serpin family E member 1	5	98	0.24	1.11	8.6E-06	uro_cells	NA	NA	NA	yes
+SHH	ENSG00000164690	sonic hedgehog signaling molecule	5	136	0.29	1.36	1.3E-38	ligand	NA	NA	NA	review
+SNAI1	ENSG00000124216	snail family transcriptional repressor 1	5	150	0.35	1.10	2.3E-26	uro_cells	NA	NA	NA	yes
+SNAI2	ENSG00000019549	snail family transcriptional repressor 2	5	114	0.27	2.10	2.6E-53	uro_cells	NA	NA	NA	yes
+SOX9	ENSG00000125398	SRY-box transcription factor 9	5	132	0.28	1.54	4.4E-35	uro_cells	NA	NA	NA	yes
+SPP1	ENSG00000118785	secreted phosphoprotein 1	5	132	0.32	1.21	3.9E-10	uro_cells	NA	NA	NA	yes
+TGFB1	ENSG00000105329	transforming growth factor beta 1	5	190	0.43	1.39	3.2E-20	ligand	NA	NA	NA	no
+TIMP1	ENSG00000102265	TIMP metallopeptidase inhibitor 1	5	106	0.26	1.11	3.2E-15	uro_cells	NA	NA	NA	yes
+WNT5A	ENSG00000114251	Wnt family member 5A	5	88	0.18	1.10	4.4E-11	ligand	NA	NA	NA	review

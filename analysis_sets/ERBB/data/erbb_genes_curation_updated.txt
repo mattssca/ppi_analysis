@@ -1,0 +1,119 @@
+gene_symbol	ensembl_gene_id	description	module	degree	hub_score	rwr_score	max_diff	padj	protein_atlas	receptor	uro_receptor	keep	go_bladder_disease	go_urinary_bladder_cancer	go_bladder_carcinoma	go_count	go_condensed	mean_expr_UroA	mean_expr_UroB	mean_expr_UroC	mean_expr_GU	mean_expr_BaSq	scRNA_normal_class	scRNA_normal_conf_score	scRNA_normal_conf_level	scRNA_cancer_class	scRNA_cancer_conf_score	scRNA_cancer_conf_level
+FAS	ENSG00000026103	Fas cell surface death receptor	1	112	0.25	0.0012	1.1	4.70E-11	ambiguous	NA	NA	review	no	no	no	0	yes	-0.238	0.012	-0.4	-0.393	0.696	non_urothelial	3.48	Medium	non_urothelial	3.97	Medium
+PRLR	ENSG00000113494	prolactin receptor	1	76	0.16	0.00142	1.27	3.50E-29	ambiguous	NA	NA	review	no	no	no	0	no	-0.349	-0.328	0.326	0.842	-0.425	non_urothelial	3.99	High	non_urothelial	3.99	High
+AREG	ENSG00000109321	amphiregulin	2	124	0.28	0.00451	1.42	4.10E-22	ambiguous	NA	NA	review	no	yes	no	1	yes	-0.418	-0.088	-0.508	0.245	0.909	uro_cells	1.97	High	uro_cells	1.27	Medium
+EPHA2	ENSG00000142627	EPH receptor A2	2	134	0.29	0.00275	1.19	2.00E-14	ambiguous	NA	NA	review	no	yes	yes	2	yes	0.234	0.549	-0.637	-0.35	0.554	uro_cells	1.40	Medium	uro_cells	1.24	Medium
+VEGFC	ENSG00000150630	vascular endothelial growth factor C	2	114	0.27	0.00437	1.29	3.60E-23	ambiguous	NA	NA	review	no	yes	yes	2	yes	-0.518	-0.123	0.11	0.153	0.774	non_urothelial	3.86	Medium	non_urothelial	3.76	Medium
+MMP9	ENSG00000100985	matrix metallopeptidase 9	5	246	0.55	0.00294	1.13	2.10E-32	ambiguous	NA	NA	review	no	yes	no	1	yes	-0.654	0.233	-0.038	0.081	0.48	non_urothelial	3.95	High	non_urothelial	3.99	High
+PPP2R1A	ENSG00000105568	protein phosphatase 2 scaffold subunit Aalpha	3	120	0.25	0.00136	1.12	1.20E-09	bladder_related	NA	NA	yes	no	no	no	0	no	0.354	-0.047	0.427	-0.002	-0.691	uro_cells	1.31	Low	uro_cells	2.79	High
+SNCA	ENSG00000145335	synuclein alpha	3	90	0.2	0.00117	1.09	2.70E-16	bladder_related	NA	NA	yes	no	no	no	0	no	-0.528	0.021	0.228	-0.109	0.562	non_urothelial	3.73	Medium	non_urothelial	4.00	High
+ANXA5	ENSG00000164111	annexin A5	4	220	0.49	0.00282	1.38	5.30E-24	bladder_related	NA	NA	yes	no	no	no	0	no	-0.558	0.08	-0.022	-0.22	0.823	uro_cells	1.55	Medium	uro_cells	1.68	Medium
+BMP2	ENSG00000125845	bone morphogenetic protein 2	5	94	0.21	0.00125	1.06	4.10E-25	bladder_related	NA	NA	review	no	no	no	0	no	0.581	-0.317	0.32	-0.438	-0.483	uro_cells	1.25	Low	non_urothelial	3.84	Medium
+NES	ENSG00000132688	nestin	5	104	0.24	0.00125	1.2	1.50E-13	bladder_related	NA	NA	review	no	no	no	0	no	-0.495	-0.342	0.707	0.058	0.155	non_urothelial	3.86	Medium	non_urothelial	3.99	High
+IFNG	ENSG00000111537	interferon gamma	1	188	0.41	0.0015	1.27	4.90E-21	ligand	-	-	review	no	yes	no	1	yes	-0.493	0.086	-0.2	0.174	0.772	non_urothelial	3.97	High	non_urothelial	4.00	High
+IL10	ENSG00000136634	interleukin 10	1	226	0.48	0.00166	1.28	3.90E-31	ligand	-	-	review	no	no	no	0	no	-0.578	0.111	-0.406	0.024	0.7	non_urothelial	3.93	High	non_urothelial	4.00	High
+ARRB1	ENSG00000137486	arrestin beta 1	3	102	0.21	0.00124	1.24	2.00E-26	ligand	-	-	review	no	no	no	0	no	-0.362	-0.437	0.506	0.771	-0.468	non_urothelial	3.84	Medium	uro_cells	0.93	Low
+ARRB2	ENSG00000141480	arrestin beta 2	3	106	0.2	0.00126	1.21	1.80E-42	ligand	-	-	review	no	no	no	0	no	-0.754	0.017	-0.049	0.443	0.454	non_urothelial	3.72	Medium	non_urothelial	3.69	Low
+SHH	ENSG00000164690	sonic hedgehog signaling molecule	5	136	0.29	0.00259	1.36	1.30E-38	ligand	-	-	review	no	no	no	0	no	0.556	0.332	0.202	-0.805	-0.527	non_urothelial	1.95	Low	non_urothelial	3.99	High
+TGFB1	ENSG00000105329	transforming growth factor beta 1	5	190	0.43	0.00264	1.39	3.20E-20	ligand	-	-	no	no	yes	yes	2	yes	0.063	0.157	-0.307	-0.836	0.557	uro_cells	1.28	Low	non_urothelial	3.64	Low
+WNT5A	ENSG00000114251	Wnt family member 5A	5	88	0.18	0.00229	1.1	4.40E-11	ligand	-	-	review	no	no	no	0	no	0.054	0.467	0.103	-0.63	0.144	non_urothelial	3.82	Medium	non_urothelial	3.91	Medium
+CSF1	ENSG00000184371	colony stimulating factor 1	1	152	0.34	0.00445	1.26	1.20E-31	missing	NA	NA	review	yes	no	no	1	yes	-0.617	0.221	0.076	-0.28	0.64	non_urothelial	3.64	Medium	non_urothelial	3.92	Medium
+CXCL8	ENSG00000169429	C-X-C motif chemokine ligand 8	1	248	0.53	0.00287	1.56	2.20E-40	missing	NA	NA	no	no	yes	yes	2	yes	-0.554	0.576	-0.556	0.093	1.009	uro_cells	2.21	High	non_urothelial	4.00	High
+CXCR4	ENSG00000121966	C-X-C motif chemokine receptor 4	1	234	0.51	0.00288	1.13	1.80E-33	missing	NA	NA	review	no	yes	yes	2	yes	-0.683	0.069	0.232	0.016	0.45	non_urothelial	3.52	Medium	non_urothelial	3.89	Medium
+IL1B	ENSG00000125538	interleukin 1 beta	1	278	0.59	0.00299	1.19	2.60E-18	missing	NA	NA	review	yes	yes	no	2	yes	-0.464	0.217	0.136	0.075	0.724	uro_cells	0.99	Low	uro_cells	1.53	Medium
+HBEGF	ENSG00000113070	heparin binding EGF like growth factor	2	134	0.32	0.00455	1.5	1.90E-29	missing	NA	NA	review	yes	no	no	1	yes	-0.411	0.348	-0.238	-0.16	1.092	uro_cells	1.42	Medium	non_urothelial	3.22	Low
+CD247	ENSG00000198821	CD247 molecule	1	92	0.2	0.00226	1.08	6.90E-27	non_urothelial	NA	NA	no	no	no	no	0	no	-0.648	0.17	0.43	0.039	0.373	non_urothelial	3.95	High	non_urothelial	3.98	High
+CD34	ENSG00000174059	CD34 molecule	1	206	0.45	0.00278	1.09	2.00E-08	non_urothelial	NA	NA	no	no	no	no	0	no	-0.433	-0.086	0.66	-0.034	-0.083	non_urothelial	3.41	Medium	non_urothelial	3.94	Medium
+CD8A	ENSG00000153563	CD8 subunit alpha	1	216	0.48	0.00279	1.09	4.10E-17	non_urothelial	NA	NA	no	no	no	no	0	no	-0.533	0.034	0.191	-0.079	0.552	non_urothelial	3.94	High	non_urothelial	4.00	High
+CSF2	ENSG00000164400	colony stimulating factor 2	1	212	0.48	0.00274	1.17	3.90E-18	non_urothelial	NA	NA	review	yes	no	no	1	yes	-0.411	0.169	-0.25	0.086	0.755	non_urothelial	3.90	High	non_urothelial	4.00	High
+CSF3	ENSG00000108342	colony stimulating factor 3	1	144	0.32	0.00133	1.22	1.90E-25	non_urothelial	NA	NA	review	yes	no	no	1	yes	-0.398	0.094	-0.372	-0.158	0.821	non_urothelial	3.74	Medium	non_urothelial	3.97	Medium
+ICAM1	ENSG00000090339	intercellular adhesion molecule 1	1	204	0.45	0.00161	1.54	2.50E-46	non_urothelial	NA	NA	no	no	yes	no	1	yes	-0.74	0.276	-0.093	0.217	0.802	non_urothelial	2.69	Low	uro_cells	0.63	Low
+IL15	ENSG00000164136	interleukin 15	1	124	0.26	0.00124	1.32	5.60E-22	non_urothelial	NA	NA	review	no	no	no	0	no	-0.461	0.178	-0.295	-0.179	0.863	non_urothelial	3.88	Medium	non_urothelial	3.87	Medium
+IL6	ENSG00000136244	interleukin 6	1	356	0.72	0.00351	1.36	1.40E-33	non_urothelial	NA	NA	review	yes	no	no	1	yes	-0.544	-0.054	-0.137	-0.015	0.818	non_urothelial	3.64	Medium	non_urothelial	3.97	Medium
+IL7	ENSG00000104432	interleukin 7	1	140	0.3	0.00132	1.04	4.90E-11	non_urothelial	NA	NA	review	no	no	no	0	no	0.029	0.276	-0.171	-0.659	0.381	non_urothelial	3.93	High	non_urothelial	3.99	High
+PTPRC	ENSG00000262418	protein tyrosine phosphatase receptor type C	1	246	0.52	0.00292	1.03	4.60E-23	non_urothelial	NA	NA	no	no	no	no	0	no	-0.591	0.229	0.265	-0.135	0.437	non_urothelial	3.63	Medium	non_urothelial	4.00	High
+TLR2	ENSG00000137462	toll like receptor 2	1	146	0.32	0.00129	1.43	1.50E-23	non_urothelial	NA	NA	review	no	yes	no	1	yes	-0.176	0.481	-0.401	-0.591	0.838	non_urothelial	3.93	High	non_urothelial	4.00	High
+TNF	ENSG00000228978	tumor necrosis factor	1	336	0.68	0.00331	1.13	3.60E-24	non_urothelial	NA	NA	review	yes	no	no	1	yes	-0.601	0.154	0.317	-0.01	0.533	non_urothelial	3.93	High	non_urothelial	3.97	Medium
+ZAP70	ENSG00000291603	zeta chain of T cell receptor associated protein kinase 70	1	120	0.25	0.00136	1.11	6.10E-23	non_urothelial	NA	NA	no	no	no	no	0	no	-0.606	0.198	0.5	-0.053	0.203	non_urothelial	3.98	High	non_urothelial	4.00	High
+PDGFRB	ENSG00000113721	platelet derived growth factor receptor beta	2	238	0.5	0.00319	1.2	2.50E-34	non_urothelial	NA	NA	no	no	no	no	0	no	-0.638	-0.329	0.531	0.051	0.559	non_urothelial	3.71	Medium	non_urothelial	3.98	Medium
+ITGB2	ENSG00000160255	integrin subunit beta 2	3	94	0.19	0.00118	1.26	1.30E-35	non_urothelial	NA	NA	no	no	no	no	0	no	-0.679	0.211	0.254	-0.073	0.584	non_urothelial	3.73	Medium	non_urothelial	3.96	Medium
+PLEK	ENSG00000115956	pleckstrin	3	86	0.2	0.00118	1.36	8.40E-44	non_urothelial	NA	NA	no	no	no	no	0	no	-0.726	0.196	0.26	0.012	0.638	non_urothelial	3.79	Medium	non_urothelial	3.96	Medium
+CAV1	ENSG00000105974	caveolin 1	5	210	0.45	0.00285	1.52	1.20E-33	non_urothelial	NA	NA	no	no	yes	yes	2	yes	-0.479	-0.408	0.472	-0.162	1.04	uro_cells	1.14	Low	uro_cells	3.29	High
+FN1	ENSG00000115414	fibronectin 1	5	348	0.69	0.00562	1.23	1.60E-24	non_urothelial	NA	NA	no	no	yes	no	1	yes	-0.553	-0.405	0.259	0.127	0.681	uro_cells	1.03	Low	uro_cells	3.14	High
+CCL2	ENSG00000108691	C-C motif chemokine ligand 2	1	180	0.4	0.00147	1.48	4.40E-48	uro_cells	NA	NA	yes	no	no	no	0	no	-0.763	0.235	0.273	0.118	0.713	uro_cells	0.91	Low	non_urothelial	3.74	Medium
+CD274	ENSG00000120217	CD274 molecule	1	136	0.32	0.00243	1.55	1.10E-35	uro_cells	NA	NA	yes	no	no	no	0	no	-0.59	0.158	-0.384	0.157	0.956	non_urothelial	3.89	High	non_urothelial	3.46	Low
+GATA3	ENSG00000107485	GATA binding protein 3	1	116	0.25	0.00155	1.51	4.20E-42	uro_cells	NA	NA	yes	no	no	no	0	no	0.493	0.225	0.237	0.296	-1.017	uro_cells	1.41	Medium	uro_cells	2.96	High
+JAK2	ENSG00000096968	Janus kinase 2	1	280	0.6	0.00514	1.1	1.70E-11	uro_cells	NA	NA	yes	no	no	no	0	no	-0.168	0.244	-0.471	-0.556	0.546	non_urothelial	3.76	Medium	non_urothelial	3.87	Medium
+PTGS2	ENSG00000073756	prostaglandin-endoperoxide synthase 2	1	182	0.44	0.00262	1.03	1.10E-08	uro_cells	NA	NA	yes	yes	yes	yes	3	yes	-0.066	0.328	-0.395	-0.425	0.602	uro_cells	1.66	High	non_urothelial	3.38	Low
+SOCS1	ENSG00000185338	suppressor of cytokine signaling 1	1	136	0.3	0.00246	1.18	2.30E-26	uro_cells	NA	NA	yes	no	yes	no	1	yes	-0.64	0.107	-0.061	0.119	0.545	non_urothelial	3.37	Low	uro_cells	1.31	Medium
+SOCS3	ENSG00000184557	suppressor of cytokine signaling 3	1	168	0.38	0.00146	1.54	7.70E-50	uro_cells	NA	NA	yes	no	no	no	0	no	-0.733	0.398	-0.035	0.076	0.81	uro_cells	1.37	Low	uro_cells	2.05	Medium
+STAT1	ENSG00000115415	signal transducer and activator of transcription 1	1	220	0.48	0.00271	1.32	3.30E-17	uro_cells	NA	NA	yes	no	no	no	0	no	-0.348	0.534	-0.598	-0.095	0.724	non_urothelial	2.30	Low	uro_cells	1.27	Medium
+STAT3	ENSG00000168610	signal transducer and activator of transcription 3	1	416	0.82	0.00577	1.27	7.80E-17	uro_cells	NA	NA	yes	no	no	no	0	no	-0.234	0.471	-0.594	-0.475	0.678	uro_cells	1.29	Low	uro_cells	0.90	Low
+STAT6	ENSG00000166888	signal transducer and activator of transcription 6	1	112	0.25	0.00118	1.34	7.50E-47	uro_cells	NA	NA	yes	no	no	no	0	no	0.573	0.361	0.213	-0.765	-0.333	non_urothelial	2.64	Low	uro_cells	0.51	Low
+TLR4	ENSG00000136869	toll like receptor 4	1	218	0.46	0.0017	1.37	1.50E-37	uro_cells	NA	NA	yes	no	no	no	0	no	0.544	0.152	-0.554	-0.825	-0.514	non_urothelial	3.45	Medium	non_urothelial	3.65	Low
+TNFRSF1A	ENSG00000067182	TNF receptor superfamily member 1A	1	138	0.3	0.00128	1.05	2.90E-12	uro_cells	NA	NA	yes	no	no	no	0	no	0.106	0.543	-0.3	-0.507	0.351	uro_cells	1.36	Low	uro_cells	2.07	Medium
+TRAF6	ENSG00000175104	TNF receptor associated factor 6	1	162	0.35	0.00145	1.2	1.80E-22	uro_cells	NA	NA	yes	no	no	no	0	no	0.486	-0.026	-0.187	-0.71	-0.217	non_urothelial	3.73	Medium	non_urothelial	3.28	Low
+ANGPT1	ENSG00000154188	angiopoietin 1	2	134	0.31	0.00448	1.04	4.70E-18	uro_cells	NA	NA	yes	no	no	no	0	no	-0.513	-0.276	0.226	-0.012	0.528	non_urothelial	3.96	High	non_urothelial	3.79	Medium
+EREG	ENSG00000124882	epiregulin	2	108	0.24	0.00448	1.58	3.10E-34	uro_cells	NA	NA	yes	no	no	no	0	no	-0.442	-0.185	-0.42	0.309	1.142	non_urothelial	3.65	Medium	non_urothelial	3.36	Low
+FGFR1	ENSG00000077782	fibroblast growth factor receptor 1	2	194	0.4	0.00439	1.27	4.00E-15	uro_cells	NA	NA	yes	no	no	no	0	no	-0.542	-0.287	0.727	-0.061	0.006	non_urothelial	3.19	Low	non_urothelial	3.93	Medium
+FGFR3	ENSG00000068078	fibroblast growth factor receptor 3	2	172	0.36	0.00223	1.28	1.90E-37	uro_cells	NA	NA	yes	no	yes	yes	2	yes	0.642	0.448	0.163	-0.637	-0.329	non_urothelial	3.16	Low	non_urothelial	3.04	Low
+FGFR4	ENSG00000160867	fibroblast growth factor receptor 4	2	128	0.27	0.00198	1.03	2.30E-06	uro_cells	NA	NA	yes	no	no	no	0	no	-0.351	-0.269	0.677	0.035	-0.113	non_urothelial	3.98	High	non_urothelial	4.00	High
+GAB2	ENSG00000033327	GRB2 associated binding protein 2	2	134	0.29	0.00146	1.03	4.30E-17	uro_cells	NA	NA	yes	no	no	no	0	no	-0.321	-0.467	0.121	0.566	-0.455	non_urothelial	3.83	Medium	non_urothelial	3.74	Medium
+IRS1	ENSG00000169047	insulin receptor substrate 1	2	246	0.53	0.00514	1.85	6.90E-70	uro_cells	NA	NA	yes	no	no	no	0	no	0.67	0.332	-0.017	-1.182	-0.167	non_urothelial	2.32	Low	non_urothelial	3.70	Low
+NGFR	ENSG00000064300	nerve growth factor receptor	2	152	0.32	0.0017	1.16	3.30E-25	uro_cells	NA	NA	yes	yes	no	no	1	yes	-0.516	-0.113	0.186	-0.273	0.648	non_urothelial	3.95	High	non_urothelial	4.00	High
+NRAS	ENSG00000213281	NRAS proto-oncogene, GTPase	2	246	0.49	0.00531	1.19	1.00E-11	uro_cells	NA	NA	yes	no	no	no	0	no	-0.102	-0.404	-0.692	0.5	0.486	non_urothelial	2.75	Low	uro_cells	1.44	Medium
+PIK3CD	ENSG00000171608	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit delta	2	168	0.33	0.00468	1.09	2.60E-26	uro_cells	NA	NA	yes	no	no	no	0	no	-0.59	0.122	0.22	-0.229	0.498	non_urothelial	3.94	High	non_urothelial	4.00	High
+PIK3CG	ENSG00000105851	phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit gamma	2	108	0.24	0.0013	1	7.50E-23	uro_cells	NA	NA	yes	no	no	no	0	no	-0.546	0.153	0.11	-0.22	0.454	non_urothelial	3.96	High	non_urothelial	4.00	High
+PIK3R2	ENSG00000105647	phosphoinositide-3-kinase regulatory subunit 2	2	204	0.4	0.00497	1.19	5.90E-27	uro_cells	NA	NA	yes	no	no	no	0	no	0.589	0.211	-0.105	-0.477	-0.603	non_urothelial	3.92	High	non_urothelial	3.80	Medium
+PRKCZ	ENSG00000067606	protein kinase C zeta	2	134	0.29	0.0014	1.18	1.60E-35	uro_cells	NA	NA	yes	no	no	no	0	no	0.628	0.255	-0.291	-0.116	-0.556	non_urothelial	3.65	Medium	non_urothelial	2.96	Low
+RPS27A	ENSG00000143947	ribosomal protein S27a	2	196	0.38	0.00494	1.02	4.20E-14	uro_cells	NA	NA	yes	no	no	no	0	no	0.39	0.061	0.053	-0.628	-0.074	uro_cells	2.71	High	uro_cells	3.99	High
+CTNND1	ENSG00000198561	catenin delta 1	3	88	0.19	0.00231	1.07	1.80E-26	uro_cells	NA	NA	yes	no	no	no	0	no	0.591	0.255	0.053	-0.477	-0.104	uro_cells	1.40	Medium	non_urothelial	2.87	Low
+CTTN	ENSG00000288401	cortactin	3	96	0.2	0.00129	1.06	3.60E-24	uro_cells	NA	NA	yes	no	no	no	0	no	0.557	0.395	-0.032	-0.498	-0.223	uro_cells	1.45	Medium	uro_cells	2.13	Medium
+DNM2	ENSG00000079805	dynamin 2	3	70	0.14	0.00219	1.73	1.70E-54	uro_cells	NA	NA	yes	no	no	no	0	no	0.76	0.074	0.072	-0.2	-0.972	non_urothelial	3.12	Low	uro_cells	0.75	Low
+LYN	ENSG00000254087	LYN proto-oncogene, Src family tyrosine kinase	3	204	0.43	0.00177	1.36	9.30E-31	uro_cells	NA	NA	yes	no	no	no	0	no	-0.612	0.13	-0.355	0.255	0.748	non_urothelial	3.30	Low	uro_cells	0.61	Low
+MAPT	ENSG00000277956	microtubule associated protein tau	3	82	0.18	0.00116	1.01	8.50E-08	uro_cells	NA	NA	yes	no	no	no	0	no	-0.228	-0.331	0.677	0.232	-0.274	non_urothelial	3.98	High	non_urothelial	3.93	Medium
+NCK1	ENSG00000158092	NCK adaptor protein 1	3	112	0.22	0.00341	1.83	1.00E-41	uro_cells	NA	NA	yes	no	no	no	0	no	-0.399	0.202	-0.388	-0.394	1.427	non_urothelial	2.14	Low	uro_cells	0.91	Low
+PPP2CA	ENSG00000113575	protein phosphatase 2 catalytic subunit alpha	3	122	0.26	0.00135	1.11	1.80E-10	uro_cells	NA	NA	yes	no	no	no	0	no	0.273	0.076	-0.238	-0.419	0.69	uro_cells	1.46	Medium	uro_cells	1.72	Medium
+PTK2	ENSG00000169398	protein tyrosine kinase 2	3	212	0.47	0.00302	1.11	2.20E-21	uro_cells	NA	NA	yes	no	no	no	0	no	0.539	0.048	0.259	-0.26	-0.571	non_urothelial	2.05	Low	uro_cells	1.25	Medium
+PTK2B	ENSG00000120899	protein tyrosine kinase 2 beta	3	116	0.25	0.00439	1.11	4.40E-20	uro_cells	NA	NA	yes	no	no	no	0	no	0.485	0.158	-0.27	-0.621	-0.186	non_urothelial	3.39	Medium	non_urothelial	3.53	Low
+PXN	ENSG00000089159	paxillin	3	186	0.4	0.00292	1.29	1.50E-30	uro_cells	NA	NA	yes	no	no	no	0	no	0.544	0.109	0.151	-0.749	-0.154	non_urothelial	2.26	Low	uro_cells	0.99	Medium
+RAC2	ENSG00000128340	Rac family small GTPase 2	3	116	0.23	0.00136	1.11	3.20E-18	uro_cells	NA	NA	yes	no	no	no	0	no	-0.428	0.159	0.104	-0.342	0.684	non_urothelial	3.64	Medium	non_urothelial	3.95	Medium
+SRC	ENSG00000291971	SRC proto-oncogene, non-receptor tyrosine kinase	3	470	0.88	0.00627	1.24	7.50E-18	uro_cells	NA	NA	yes	no	no	no	0	no	0.469	0.148	0.454	0.016	-0.767	non_urothelial	3.07	Low	uro_cells	0.79	Low
+AKT3	ENSG00000275199	AKT serine/threonine kinase 3	4	116	0.26	0.00256	1	5.60E-18	uro_cells	NA	NA	yes	no	no	no	0	no	-0.575	-0.282	0.426	0.191	0.24	non_urothelial	3.71	Medium	non_urothelial	2.87	Low
+BRCA1	ENSG00000012048	BRCA1 DNA repair associated	4	156	0.34	0.00266	1.28	1.90E-31	uro_cells	NA	NA	yes	no	yes	no	1	yes	-0.41	-0.38	-0.225	0.872	0.418	non_urothelial	3.96	High	non_urothelial	3.30	Low
+CASP8	ENSG00000064012	caspase 8	4	150	0.35	0.00247	1.09	1.00E-19	uro_cells	NA	NA	yes	no	no	no	0	no	0.379	0.435	-0.138	-0.65	-0.255	non_urothelial	3.53	Medium	uro_cells	1.10	Medium
+CASP9	ENSG00000132906	caspase 9	4	124	0.3	0.00239	1.23	2.40E-14	uro_cells	NA	NA	yes	no	yes	no	1	yes	0.272	0.034	0.035	0.337	-0.892	non_urothelial	3.71	Medium	non_urothelial	3.25	Low
+CCNA2	ENSG00000145386	cyclin A2	4	108	0.24	0.00237	1.24	1.20E-31	uro_cells	NA	NA	yes	no	no	no	0	no	-0.424	-0.211	-0.439	0.796	0.647	non_urothelial	3.96	High	non_urothelial	3.74	Medium
+CCNB1	ENSG00000134057	cyclin B1	4	112	0.24	0.00236	1.16	9.40E-30	uro_cells	NA	NA	yes	no	no	no	0	no	-0.389	-0.238	-0.24	0.735	0.774	non_urothelial	3.86	Medium	non_urothelial	3.50	Low
+CCND1	ENSG00000110092	cyclin D1	4	306	0.62	0.00541	1.44	3.50E-39	uro_cells	NA	NA	yes	no	yes	yes	2	yes	0.547	0.401	-0.26	-0.894	-0.089	uro_cells	1.39	Medium	uro_cells	2.37	High
+CDKN1A	ENSG00000124762	cyclin dependent kinase inhibitor 1A	4	162	0.37	0.00261	1.06	2.30E-16	uro_cells	NA	NA	yes	no	yes	no	1	yes	0.441	0.062	-0.251	-0.614	0.006	uro_cells	1.72	High	uro_cells	0.78	Low
+CDKN2A	ENSG00000147889	cyclin dependent kinase inhibitor 2A	4	222	0.5	0.00495	1.24	8.20E-23	uro_cells	NA	NA	yes	no	yes	yes	2	yes	-0.318	-0.41	-0.259	0.831	-0.03	non_urothelial	3.69	Medium	uro_cells	3.75	High
+CREB1	ENSG00000118260	cAMP responsive element binding protein 1	4	176	0.41	0.00154	1.07	1.40E-16	uro_cells	NA	NA	yes	no	no	no	0	no	0.287	0.221	-0.235	-0.779	-0.163	non_urothelial	2.56	Low	uro_cells	0.79	Low
+CTNNB1	ENSG00000168036	catenin beta 1	4	446	0.83	0.00617	1.03	8.60E-22	uro_cells	NA	NA	yes	no	yes	no	1	yes	0.488	-0.14	0.032	-0.542	-0.379	uro_cells	1.46	Medium	uro_cells	1.26	Medium
+EZH2	ENSG00000106462	enhancer of zeste 2 polycomb repressive complex 2 subunit	4	124	0.27	0.00243	1.45	3.40E-50	uro_cells	NA	NA	yes	no	yes	yes	2	yes	-0.507	-0.333	-0.343	0.946	0.451	non_urothelial	3.70	Medium	uro_cells	1.17	Medium
+FOXO1	ENSG00000150907	forkhead box O1	4	152	0.33	0.00147	1.14	2.50E-26	uro_cells	NA	NA	yes	no	no	no	0	no	0.467	-0.2	-0.285	-0.676	-0.436	non_urothelial	3.29	Low	uro_cells	0.61	Low
+HIF1A	ENSG00000100644	hypoxia inducible factor 1 subunit alpha	4	296	0.61	0.00325	1.58	5.20E-25	uro_cells	NA	NA	yes	yes	no	no	1	yes	0.111	0.255	-0.478	-0.83	0.752	uro_cells	1.47	Medium	uro_cells	2.01	Medium
+HSPA4	ENSG00000170606	heat shock protein family A (Hsp70) member 4	4	166	0.35	0.00257	1.22	2.30E-26	uro_cells	NA	NA	yes	no	no	no	0	no	0.589	0.159	0.053	-0.63	-0.136	non_urothelial	2.54	Low	uro_cells	1.01	Medium
+HSPA5	ENSG00000044574	heat shock protein family A (Hsp70) member 5	4	98	0.24	0.00119	1.38	1.10E-11	uro_cells	NA	NA	yes	no	no	no	0	no	-0.273	-0.146	-0.628	0.119	0.755	uro_cells	1.81	High	uro_cells	2.99	High
+MAPK3	ENSG00000102882	mitogen-activated protein kinase 3	4	416	0.8	0.00591	1.06	1.50E-16	uro_cells	NA	NA	yes	no	no	no	0	no	-0.403	-0.294	0.255	0.653	-0.107	non_urothelial	3.31	Low	uro_cells	0.98	Low
+MCL1	ENSG00000143384	MCL1 apoptosis regulator, BCL2 family member	4	124	0.3	0.00239	1.46	2.40E-29	uro_cells	NA	NA	yes	no	no	no	0	no	-0.547	0.146	-0.596	0.183	0.864	uro_cells	1.77	High	uro_cells	3.27	High
+NPM1	ENSG00000181163	nucleophosmin 1	4	100	0.22	0.00126	1.23	1.10E-22	uro_cells	NA	NA	yes	no	no	no	0	no	0.414	-0.054	0.071	-0.784	0.448	uro_cells	2.15	High	uro_cells	3.87	High
+NR3C1	ENSG00000113580	nuclear receptor subfamily 3 group C member 1	4	122	0.29	0.00131	1.37	2.60E-16	uro_cells	NA	NA	yes	no	no	no	0	no	-0.088	-0.058	-0.179	-0.79	0.583	non_urothelial	3.07	Low	non_urothelial	3.97	Medium
+PGR	ENSG00000082175	progesterone receptor	4	134	0.32	0.00453	1.26	1.20E-09	uro_cells	NA	NA	yes	no	no	no	0	no	-0.233	-0.195	0.862	-0.401	0.024	non_urothelial	3.98	High	non_urothelial	4.00	High
+PPARG	ENSG00000132170	peroxisome proliferator activated receptor gamma	4	202	0.44	0.00158	1.71	2.20E-76	uro_cells	NA	NA	yes	no	yes	no	1	yes	0.51	0.231	0.331	0.455	-1.196	uro_cells	1.44	Medium	uro_cells	3.95	High
+RB1	ENSG00000139687	RB transcriptional corepressor 1	4	106	0.24	0.00128	1.2	2.50E-24	uro_cells	NA	NA	yes	no	yes	no	1	yes	0.299	0.231	0.274	-0.889	0.309	non_urothelial	3.23	Low	uro_cells	0.58	Low
+SMAD3	ENSG00000166949	SMAD family member 3	4	190	0.41	0.00268	1.47	3.90E-53	uro_cells	NA	NA	yes	no	no	no	0	no	0.635	0.581	-0.261	-0.831	-0.223	uro_cells	1.38	Medium	uro_cells	0.61	Low
+TP53	ENSG00000141510	tumor protein p53	4	430	0.83	0.0059	1.38	2.60E-25	uro_cells	NA	NA	yes	yes	yes	yes	3	yes	0.511	0.147	-0.266	-0.439	-0.869	non_urothelial	3.28	Low	uro_cells	1.04	Medium
+ANXA2	ENSG00000182718	annexin A2	5	76	0.19	0.00109	1.93	5.00E-34	uro_cells	NA	NA	yes	no	no	no	0	no	-0.113	0.104	-0.519	-0.283	1.41	uro_cells	2.31	High	uro_cells	3.99	High
+BMP4	ENSG00000125378	bone morphogenetic protein 4	5	120	0.25	0.00138	1.37	1.90E-14	uro_cells	NA	NA	review	no	no	no	0	no	-0.512	-0.015	0.853	0.102	-0.034	non_urothelial	3.74	Medium	non_urothelial	3.99	High
+CD44	ENSG00000026508	CD44 molecule (IN blood group)	5	288	0.6	0.00515	2.12	5.70E-48	uro_cells	NA	NA	yes	no	yes	no	1	yes	0.024	0.227	-0.299	-1.08	1.041	uro_cells	1.61	Medium	non_urothelial	3.80	Medium
+EPCAM	ENSG00000119888	epithelial cell adhesion molecule	5	88	0.22	0.00421	1.14	5.00E-28	uro_cells	NA	NA	yes	no	no	no	0	no	-0.048	-0.13	0.196	0.8	-0.339	uro_cells	1.39	Medium	uro_cells	3.74	High
+MKI67	ENSG00000148773	marker of proliferation Ki-67	5	106	0.26	0.00232	1.11	2.10E-24	uro_cells	NA	NA	yes	no	yes	no	1	yes	-0.389	-0.321	-0.372	0.719	0.423	non_urothelial	3.95	High	non_urothelial	3.45	Low
+MMP3	ENSG00000149968	matrix metallopeptidase 3	5	108	0.26	0.00122	1.3	4.40E-32	uro_cells	NA	NA	yes	no	no	no	0	no	-0.562	0.063	-0.26	0.309	0.734	non_urothelial	3.45	Medium	non_urothelial	4.00	High
+POU5F1	ENSG00000204531	POU class 5 homeobox 1	5	132	0.28	0.00247	1.4	8.50E-20	uro_cells	NA	NA	yes	no	no	no	0	no	0.231	-0.351	0.303	0.666	-0.734	non_urothelial	3.77	Medium	non_urothelial	3.92	Medium
+SERPINE1	ENSG00000106366	serpin family E member 1	5	98	0.24	0.0022	1.11	8.60E-06	uro_cells	NA	NA	yes	no	yes	no	1	yes	-0.131	0.106	-0.455	-0.124	0.653	non_urothelial	2.94	Low	non_urothelial	3.68	Low
+SNAI1	ENSG00000124216	snail family transcriptional repressor 1	5	150	0.35	0.00254	1.1	2.30E-26	uro_cells	NA	NA	yes	no	no	no	0	no	-0.596	-0.209	0.185	0.026	0.505	non_urothelial	3.94	High	non_urothelial	3.79	Medium
+SNAI2	ENSG00000019549	snail family transcriptional repressor 2	5	114	0.27	0.00238	2.1	2.60E-53	uro_cells	NA	NA	yes	no	yes	yes	2	yes	0.079	0.193	-0.203	-1.16	0.938	non_urothelial	3.26	Low	non_urothelial	3.98	Medium
+SOX9	ENSG00000125398	SRY-box transcription factor 9	5	132	0.28	0.00144	1.54	4.40E-35	uro_cells	NA	NA	yes	no	no	no	0	no	-0.548	-0.065	-0.293	0.316	0.994	non_urothelial	2.91	Low	non_urothelial	3.49	Low
+SPP1	ENSG00000118785	secreted phosphoprotein 1	5	132	0.32	0.00135	1.21	3.90E-10	uro_cells	NA	NA	yes	no	yes	no	1	yes	-0.298	0.387	-0.744	0.115	0.47	non_urothelial	3.90	High	non_urothelial	3.71	Low
+TIMP1	ENSG00000102265	TIMP metallopeptidase inhibitor 1	5	106	0.26	0.00114	1.11	3.20E-15	uro_cells	NA	NA	yes	no	no	no	0	no	-0.42	-0.125	-0.089	-0.288	0.691	uro_cells	1.83	High	uro_cells	2.51	High
